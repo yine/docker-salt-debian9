@@ -21,5 +21,5 @@ RUN groupadd -r netease && useradd -r -g netease -m popo && echo 'popo ALL=(ALL)
 EXPOSE 22
 
 # Define default command
-CMD ["bash"]
+CMD ["/etc/init.d/salt-master restart"]
 
