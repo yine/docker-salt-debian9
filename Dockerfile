@@ -26,7 +26,7 @@ RUN apt-get update && apt-get -y --quiet --force-yes upgrade \
 RUN groupadd -r netease && useradd -r -g netease -m popo && echo 'popo ALL=(ALL) NOPASSWD: ALL'  >> /etc/sudoers
 RUN mkdir -p /var/run/sshd && ln -s /etc/salt/.ssh ~/.ssh 
 
-RUN echo "/usr/sbin/sshd -D" > ~/run.sh && echo "/usr/bin/salt-master -d" >> ~/run.sh
+RUN echo "/usr/sbin/sshd" > ~/run.sh && echo "/usr/bin/salt-master -d" >> ~/run.sh
 RUN chmod 744 ~/run.sh
 
 # expose port
